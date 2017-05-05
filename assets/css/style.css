@@ -1,0 +1,58 @@
+body {
+	position: relative;
+	background-image: url("../images/crystalCave.jpg");
+}
+
+
+
+
+.container {
+
+	position: absolute;
+	left:14px;
+	z-index: 1;
+	
+}
+
+.col-sm-1 {
+
+	border-width: 2px;
+	border-style: solid;
+	border-color: grey;
+	margin: 14px;
+	padding: 3px;
+	height: 200px;	
+
+}
+
+
+.col-sm-3 {
+
+	border-width: 2px;
+	border-style: solid;
+	border-color: grey;
+	margin: 14px;
+	padding: 3px;
+	height: 200px;	
+}
+
+.col-sm-2 {
+
+	border-width: 2px;
+	border-style: solid;
+	border-color: grey;
+	margin: 14px;
+	padding: 3px;
+	height: 200px;	}
+
+
+
+
+	#mysteryNum	{
+text-align: center;
+
+	}
+
+
+
+
