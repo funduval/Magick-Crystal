@@ -1,39 +1,37 @@
-// ===========================================
-// STATE GLOBAL VARIABLES
-// ===========================================
 
+//generate random numbers & declare variables
 
-  var mysteryNumber = Math.floor(Math.random() * ((120-19)+1) + 19);    
+//Logic variables
   var win = 0;
   var lose = 0;
+  gameInit();
+
   var yourTotal = 0;
 
-
+  var mysteryNumber = Math.floor(Math.random() * ((120-19)+1) + 19); 
   var magenta= Math.floor(Math.random()*11+1)
   var blue= Math.floor(Math.random()*11+1)
   var yellow= Math.floor(Math.random()*11+1)
   var orange= Math.floor(Math.random()*11+1)
 
-  console.log(mysteryNumber);
-  console.log(magenta);
-  console.log(blue);
-  console.log(yellow);
-  console.log(orange);
-
-
-  
   var begin = $("<h3>");
   begin.addClass("clickCommand");
   $("#guessThis").append(begin);
   $(".clickCommand").html("Click the Moving Crystal");
 
 
-	   
+//grab & change html elements
+function gameInit() {  
 
-// ===========================================
-// GRAB HTML ELEMENTS
-// ===========================================
+
+ 
+  //click listener, magic number
+
+
+
 $("#guessThis").on("click", function() {
+
+			$("#totalsAdded").html(yourTotal);
 	     
 	        var numReveal = $("<h2>");
 
@@ -52,12 +50,13 @@ $("#guessThis").on("click", function() {
 
         });
 
+ //click listener, 4 crystals
+
 						$("#blueCrystal").on("click", function() {
 
 						       yourTotal=yourTotal + blue;
 						        $("#totalsAdded").html(yourTotal);
-						        winTest();
-						        loseTest();
+						        winLoseTest();
 
 						        });
 
@@ -65,8 +64,7 @@ $("#guessThis").on("click", function() {
 
 								yourTotal=yourTotal + yellow;
 								$("#totalsAdded").html(yourTotal);
-								winTest();
-						        loseTest();
+								winLoseTest();
 
 						        });
 
@@ -74,8 +72,7 @@ $("#guessThis").on("click", function() {
 
 								yourTotal=yourTotal + magenta;
 								$("#totalsAdded").html(yourTotal);
-								winTest();
-						        loseTest();
+								winLoseTest();
 
 						        });
 
@@ -83,33 +80,58 @@ $("#guessThis").on("click", function() {
 
 								yourTotal=yourTotal + orange;
 								$("#totalsAdded").html(yourTotal);
-								winTest();
-						        loseTest();
+								winLoseTest();
 
 						        });
 
+//FUNCTION JUNCTION
 
-	function winTest(){
+	function winLoseTest(){
 
-		if (yourTotal === mysteryNumber){
-				win++;
-				$("#wins").html(win);
-				alert("You Win the Round!")
+				if (yourTotal === mysteryNumber){
+						win++;
+						$("#wins").html(win);
+						 $("#totalsAdded").html(yourTotal);
+						alert("You Win the Round!");
+						
+						reset();	
+						gameInit();
+						
+				};
+
+				if (yourTotal > mysteryNumber) {
+						lose++;
+						$("#losses").html(lose);
+						 $("#totalsAdded").html(yourTotal);
+						alert("Sorry, but, you lose!");
+
+						reset();
+						gameInit()
+									
+					
+				};
+
+
+	function reset(){
+
+   $(".clickCommand").html("Click the Moving Crystal");
+   $(".clickCommand").css("font-size", "22px");
+   
+   $(".col-sm-4").html("Keep Clicking Crystals<br>To Add Up To:");
+
+   mysteryNumber = Math.floor(Math.random() * ((120-19)+1) + 19); 
+   magenta= Math.floor(Math.random()*11+1)
+   blue= Math.floor(Math.random()*11+1)
+   yellow= Math.floor(Math.random()*11+1)
+   orange= Math.floor(Math.random()*11+1)
+
+   yourTotal = 0;
+   $("#totalsAdded").html(yourTotal);
+
+	};
 				
-		}
-
-	}
-
-	function loseTest(){
-
-		if (yourTotal > mysteryNumber) {
-				lose++;
-				$("#losses").html(lose);
-				alert("Sorry, but, you lose!");
-				
-		}
 								
-	}
+	};
 
 
 	
@@ -119,13 +141,4 @@ $("#guessThis").on("click", function() {
 
 
 
-
-
-					
-
-
-
-
-
-
-
+};
