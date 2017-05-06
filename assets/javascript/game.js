@@ -91,22 +91,34 @@ $("#guessThis").on("click", function() {
 				if (yourTotal === mysteryNumber){
 						win++;
 						$("#wins").html(win);
-						 $("#totalsAdded").html(yourTotal);
-						alert("You Win the Round!");
 						
-						reset();	
-						gameInit();
+						alert("You Win the Round!");
+						console.log(yourTotal);
+						$("#totalsAdded").html(yourTotal);
+						
+						setTimeout(function(){
+       								 reset();
+      					}, 2300);
+						
+       								 gameInit();
+      				
 						
 				};
 
 				if (yourTotal > mysteryNumber) {
 						lose++;
 						$("#losses").html(lose);
-						 $("#totalsAdded").html(yourTotal);
+						
 						alert("Sorry, but, you lose!");
+						console.log(yourTotal);
+						$("#totalsAdded").html(yourTotal);
 
-						reset();
-						gameInit()
+						setTimeout(function(){
+       								 reset();
+      					}, 2300);
+						
+       								 gameInit();
+      				
 									
 					
 				};
@@ -114,9 +126,11 @@ $("#guessThis").on("click", function() {
 
 	function reset(){
 
+   yourTotal = 0;
+
+   $("#totalsAdded").html(yourTotal);
    $(".clickCommand").html("Click the Moving Crystal");
    $(".clickCommand").css("font-size", "22px");
-   
    $(".col-sm-4").html("Keep Clicking Crystals<br>To Add Up To:");
 
    mysteryNumber = Math.floor(Math.random() * ((120-19)+1) + 19); 
@@ -125,8 +139,7 @@ $("#guessThis").on("click", function() {
    yellow= Math.floor(Math.random()*11+1)
    orange= Math.floor(Math.random()*11+1)
 
-   yourTotal = 0;
-   $("#totalsAdded").html(yourTotal);
+  
 
 	};
 				
