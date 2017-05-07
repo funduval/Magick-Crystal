@@ -1,14 +1,12 @@
-
-
 //declare universal variablés
 
 
 var win = 0;
 var lose = 0;
-var yourTotal=0;
+var yourTotal = 0;
 
 
-var mysteryNumber; 
+var mysteryNumber;
 var magenta;
 var blue;
 var yellow;
@@ -20,144 +18,145 @@ var orange;
 gameInit();
 
 //grab html elements
- 
-
-  var begin = $("<h3>");
-  begin.addClass("clickCommand");
-  $("#guessThis").append(begin);
-  $(".clickCommand").html("Click the Moving<br>Crystal");
-  $(".clickCommand").css("font-size", "30px");
-  $(".clickCommand").css("color","white");
 
 
- // generate randos
+var begin = $("<h3>");
+begin.addClass("clickCommand");
+$("#guessThis").append(begin);
+$(".clickCommand").html("Click the Moving<br>Crystal");
+$(".clickCommand").css("font-size", "30px");
+$(".clickCommand").css("color", "white");
 
-   mysteryNumber = Math.floor(Math.random() * ((120-19)+1) + 19); 
-   magenta= Math.floor(Math.random()*11+1)
-   blue= Math.floor(Math.random()*11+1)
-   yellow= Math.floor(Math.random()*11+1)
-   orange= Math.floor(Math.random()*11+1)
+
+// generate randos
+
+mysteryNumber = Math.floor(Math.random() * ((120 - 19) + 1) + 19);
+magenta = Math.floor(Math.random() * 11 + 1)
+blue = Math.floor(Math.random() * 11 + 1)
+yellow = Math.floor(Math.random() * 11 + 1)
+orange = Math.floor(Math.random() * 11 + 1)
 
 //wrap big function for main game moves 
 
-function gameInit() {  
+function gameInit() {
 
+    //begins with click listener then grabs & uodates HTML elements
 
-$("#guessThis").on("click", function() {
+    $("#guessThis").on("click", function() {
 
-			$("#totalsAdded").html(yourTotal);
-	     
-	        var numReveal = $("<h2>");
+        $("#totalsAdded").html(yourTotal);
 
-	        numReveal.addClass("numero");
+        var numReveal = $("<h2>");
 
-	        $(".clickCommand").html(mysteryNumber);
-	        $(".clickCommand").css("font-size", "86px", "bold");
+        numReveal.addClass("numero");
 
-	        var directions = $("<p>");
+        $(".clickCommand").html(mysteryNumber);
+        $(".clickCommand").css("font-size", "86px", "bold");
 
-	        directions.addClass("toDo");
+        var directions = $("<p>");
 
-	        $("#texty").html("Keep Clicking Crystals<br>To Add Up To: <br>" + mysteryNumber);
-	        $("#texty").css("font-size", "38px","color","white","bold");
-	        $("#texty").css("text-align", "center");
+        directions.addClass("toDo");
 
-        });
+        $("#texty").html("Keep Clicking Crystals<br>To Add Up To: <br>" + mysteryNumber);
+        $("#texty").css("font-size", "38px", "color", "white", "bold");
+        $("#texty").css("text-align", "center");
 
- //click listeners, 4 crystals
+    });
 
-						$("#blueCrystal").on("click", function() {
+    //click listeners, 4 crystals
 
-						       yourTotal=yourTotal + blue;
-						        $("#totalsAdded").html(yourTotal);
-						        winLoseTest();
+    $("#blueCrystal").on("click", function() {
 
-						        });
+        yourTotal = yourTotal + blue;
+        $("#totalsAdded").html(yourTotal);
+        winLoseTest();
 
-						$("#yellowCrystal").on("click", function() {
+    });
 
-								yourTotal=yourTotal + yellow;
-								$("#totalsAdded").html(yourTotal);
-								winLoseTest();
+    $("#yellowCrystal").on("click", function() {
 
-						        });
+        yourTotal = yourTotal + yellow;
+        $("#totalsAdded").html(yourTotal);
+        winLoseTest();
 
-						$("#magentaCrystal").on("click", function() {
+    });
 
-								yourTotal=yourTotal + magenta;
-								$("#totalsAdded").html(yourTotal);
-								winLoseTest();
+    $("#magentaCrystal").on("click", function() {
 
-						        });
+        yourTotal = yourTotal + magenta;
+        $("#totalsAdded").html(yourTotal);
+        winLoseTest();
 
-						$("#orangeCrystal").on("click", function() {
+    });
 
-								yourTotal=yourTotal + orange;
-								$("#totalsAdded").html(yourTotal);
-								winLoseTest();
+    $("#orangeCrystal").on("click", function() {
 
-						        });
+        yourTotal = yourTotal + orange;
+        $("#totalsAdded").html(yourTotal);
+        winLoseTest();
 
-//FUNCTION JUNCTION
+    });
 
-	function winLoseTest(){
+    //FUNCTION JUNCTION
 
-				if (yourTotal === mysteryNumber){
-						win++;
-						$("#wins").html(win);
-						
-						alert("You made " + yourTotal +" exactly! You win the round!");
-						$("#totalsAdded").html(yourTotal);
-						
-						reset();
-       					/*setTimeout(function(){
+    function winLoseTest() {
+
+        if (yourTotal === mysteryNumber) {
+            win++;
+            $("#wins").html(win);
+
+            alert("You made " + yourTotal + " exactly! You win the round!");
+            $("#totalsAdded").html(yourTotal);
+
+            reset();
+            /*setTimeout(function(){
        								 reset();
       					}, 2300);==========the reset timeout kept stopping the audio=====*/
-						
-				};
 
-				if (yourTotal > mysteryNumber) {
-						lose++;
-						$("#losses").html(lose);
-						
-						alert("Sorry, you went over " + mysteryNumber +"," + " so you lose!");
-						$("#totalsAdded").html(yourTotal);
-						
-   						reset();
+        };
 
-       					/*setTimeout(function(){
+        if (yourTotal > mysteryNumber) {
+            lose++;
+            $("#losses").html(lose);
+
+            alert("Sorry, you went over " + mysteryNumber + "," + " so you lose!");
+            $("#totalsAdded").html(yourTotal);
+
+            reset();
+
+            /*setTimeout(function(){
        								 reset();
       					}, 2300); ==========the reset timeout kept stopping the audio======*/
 
-				};
+        };
 
 
-function reset(){
+        function reset() {
 
-	yourTotal=0;
+            yourTotal = 0;
 
-   $("#totalsAdded").html(yourTotal);
-   $(".clickCommand").html("Click the Crystal <br> for a New Number");
-   $(".clickCommand").css("font-size", "30px");
-   $(".clickCommand").css("color","white");
-   $("#texty").html("Keep Clicking Crystals<br>To Add Up To <br> This New Number:");
+            $("#totalsAdded").html(yourTotal);
+            $(".clickCommand").html("Click the Crystal <br> for a New Number");
+            $(".clickCommand").css("font-size", "30px");
+            $(".clickCommand").css("color", "white");
+            $("#texty").html("Keep Clicking Crystals<br>To Add Up To <br> This New Number:");
 
-   mysteryNumber = Math.floor(Math.random() * ((120-19)+1) + 19); 
-   magenta= Math.floor(Math.random()*11+1);
-   blue= Math.floor(Math.random()*11+1);
-   yellow= Math.floor(Math.random()*11+1);
-   orange= Math.floor(Math.random()*11+1);
-
-
-	};
+            mysteryNumber = Math.floor(Math.random() * ((120 - 19) + 1) + 19);
+            magenta = Math.floor(Math.random() * 11 + 1);
+            blue = Math.floor(Math.random() * 11 + 1);
+            yellow = Math.floor(Math.random() * 11 + 1);
+            orange = Math.floor(Math.random() * 11 + 1);
 
 
+        };
 
-	
 
-				
-								
-	};
+
+
+
+
+
+    };
 
 
 
