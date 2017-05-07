@@ -109,10 +109,10 @@ $("#guessThis").on("click", function() {
 						alert("You made " + yourTotal +" exactly! You win the round!");
 						$("#totalsAdded").html(yourTotal);
 						
-						
-       					setTimeout(function(){
+						reset();
+       					/*setTimeout(function(){
        								 reset();
-      					}, 2300);
+      					}, 2300);==========the reset timeout kept stopping the audio=====*/
 						
 				};
 
@@ -123,11 +123,11 @@ $("#guessThis").on("click", function() {
 						alert("Sorry, you went over " + mysteryNumber +"," + " so you lose!");
 						$("#totalsAdded").html(yourTotal);
 						
-   
+   						reset();
 
-       					setTimeout(function(){
+       					/*setTimeout(function(){
        								 reset();
-      					}, 2300);
+      					}, 2300); ==========the reset timeout kept stopping the audio======*/
 
 				};
 
