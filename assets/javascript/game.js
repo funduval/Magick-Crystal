@@ -25,7 +25,9 @@ gameInit();
   var begin = $("<h3>");
   begin.addClass("clickCommand");
   $("#guessThis").append(begin);
-  $(".clickCommand").html("Click the Moving Crystal");
+  $(".clickCommand").html("Click the Moving<br>Crystal");
+  $(".clickCommand").css("font-size", "30px");
+  $(".clickCommand").css("color","white");
 
 
  // generate randos
@@ -56,9 +58,9 @@ $("#guessThis").on("click", function() {
 
 	        directions.addClass("toDo");
 
-	        $(".col-sm-4").html("Keep Clicking Crystals<br>To Add Up To: <br>" + mysteryNumber);
-	        $(".col-sm-4").css("font-size", "36px");
-	        $(".col-sm-4").css("text-align", "center");
+	        $("#texty").html("Keep Clicking Crystals<br>To Add Up To: <br>" + mysteryNumber);
+	        $("#texty").css("font-size", "38px","color","white","bold");
+	        $("#texty").css("text-align", "center");
 
         });
 
@@ -135,9 +137,10 @@ function reset(){
 	yourTotal=0;
 
    $("#totalsAdded").html(yourTotal);
-   $(".clickCommand").html("Click the Crystal for a New Number");
-   $(".clickCommand").css("font-size", "22px");
-   $(".col-sm-4").html("Keep Clicking Crystals<br>To Add Up To:");
+   $(".clickCommand").html("Click the Crystal <br> for a New Number");
+   $(".clickCommand").css("font-size", "30px");
+   $(".clickCommand").css("color","white");
+   $("#texty").html("Keep Clicking Crystals<br>To Add Up To <br> This New Number:");
 
    mysteryNumber = Math.floor(Math.random() * ((120-19)+1) + 19); 
    magenta= Math.floor(Math.random()*11+1);
@@ -147,9 +150,15 @@ function reset(){
 
 
 	};
+
+
+
+	
+
 				
 								
 	};
+
 
 
 
