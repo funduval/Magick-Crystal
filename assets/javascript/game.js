@@ -1,4 +1,4 @@
-//declare universal variablés for win/lose logic
+//declare global variablés for win/lose logic
 
 
 var win = 0;
@@ -6,7 +6,7 @@ var lose = 0;
 var yourTotal = 0;
 
 
-//declare universal variablés for random numbers generated
+//declare global variablés for random numbers generated
 
 var mysteryNumber;
 var magenta;
@@ -42,7 +42,7 @@ orange = Math.floor(Math.random() * 11 + 1)
 
 function gameInit() {
 
-    //begins with click listener then grabs & uodates HTML elements
+    //begins with click listener then grabs & updates HTML elements
 
     $("#guessThis").on("click", function() {
 
@@ -61,7 +61,7 @@ function gameInit() {
 
         directions.addClass("toDo");
 
-        $("#texty").html("Keep Clicking Crystals<br>To Add Up To: <br>" + mysteryNumber);
+        $("#texty").html("<br>Keep Clicking Crystals<br>To Add Up To: <br>" + mysteryNumber);
         $("#texty").css("font-size", "26px", "color", "white", "bold");
         $("#texty").css("font-family", "Inknut Antiqua", "serif");
         $("#texty").css("text-align", "center");
@@ -121,20 +121,21 @@ function gameInit() {
 
             
 
-             $("#totalsAdded").html("You made " + yourTotal + " exactly! <br> <br> You win the round!<hr>");
+             $("#totalsAdded").html("<br>You made " + yourTotal + " exactly! <br> <br> You win the round!");
              $("#totalsAdded").css("font-size", "28px");
-             $("#totalsAdded").css("height", "200px");
-             $("#totalsAdded").css("height", "400px");
+             
+             $("#totalsAdded").css("height", "380px");
              $("#totalsAdded").css("background-color", "white");
-             $("#winBox").css("border", "none");
-             $("#totalsBox").css("border", "none");
-             $("#winBox").css("color", "white");
-             $("#wins").css("color", "white");
-             $("#losses").css("color", "white");
+
+             // hide boxes behind the win/lose alert
+
+              $("#totalsBox").css("border", "none");
+
+              $("#winBox").css("visibility", "hidden");
 
             setTimeout(function(){
        								 reset();
-      					}, 2300);
+      					}, 3000);
             // ==========the reset timeout keeps stopping the audio?=====
 
         };
@@ -148,19 +149,21 @@ function gameInit() {
 
              $("#totalHead").html("");
 
-             $("#totalsAdded").html("Sorry, you went over " + mysteryNumber + "<br>You got " + yourTotal + "<br><br>You lose this round!<hr>");
+             $("#totalsAdded").html("<br>Sorry, you went over " + mysteryNumber + "<br><br>You got " + yourTotal + "<br><br>You lose this round!");
              $("#totalsAdded").css("font-size", "28px", "bold");
-             $("#totalsAdded").css("height", "400px");
+             $("#totalsAdded").css("height", "380px");
              $("#totalsAdded").css("background-color", "white");
-             $("#winBox").css("border", "none");
-             $("#totalsBox").css("border", "none");
 
-              $("#winBox").css("color", "white");
-              $("#losses").css("color", "white");
+             // hide boxes behind the win/lose alert
+              
+              $("#totalsBox").css("border", "none");
+          
+
+              $("#winBox").css("visibility", "hidden");
 
             setTimeout(function(){
        								 reset();
-      					}, 2300); 
+      					}, 3200); 
             // ==========the reset timeout keeps stopping the audio?======
 
         };
@@ -174,11 +177,9 @@ function gameInit() {
             $("#totalHead").html("YOUR TOTAL:");
             $("#totalsAdded").html(yourTotal);
 
-            // css to make the invisible fonts visible again
+            // css to make the invisible box visible again
 
-            $("#winBox").css("color", "grey");
-            $("#wins").css("color", "grey");
-            $("#losses").css("color", "grey");
+            $("#winBox").css("visibility", "visible");
 
 
              // css to restore previous borders & othere attributes
@@ -197,8 +198,10 @@ function gameInit() {
             $(".clickCommand").html("Click the Magic <br> Crystal");
             $(".clickCommand").css("font-size", "30px");
             $(".clickCommand").css("color", "white");
-            $("#texty").html("Try to Add<br>Crystals Up To <br> This New Number:");
+            $("#texty").html("<br>Try to Add<br>Crystals Up To <br> This New Number:");
             $("#texty").css("font-family", "Inknut Antiqua", "serif");
+
+            // regenerate random numbers
 
             mysteryNumber = Math.floor(Math.random() * ((120 - 19) + 1) + 19);
             magenta = Math.floor(Math.random() * 11 + 1);
