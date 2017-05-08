@@ -1,10 +1,10 @@
-//declare global variablés for win/lose logic
+ $(document).ready(function() {
 
+ //declare global variablés for win/lose logic
 
 var win = 0;
 var lose = 0;
 var yourTotal = 0;
-
 
 //declare global variablés for random numbers generated
 
@@ -16,11 +16,9 @@ var orange;
 
 //call game play
 
-
 gameInit();
 
 //grab html elements
-
 
 var begin = $("<h3>");
 begin.addClass("clickCommand");
@@ -28,7 +26,6 @@ $("#guessThis").append(begin);
 $(".clickCommand").html("Click the Moving<br>Crystal");
 $(".clickCommand").css("font-size", "30px");
 $(".clickCommand").css("color", "white");
-
 
 // generate randos
 
@@ -119,8 +116,6 @@ function gameInit() {
 
              $("#totalHead").html("");
 
-            
-
              $("#totalsAdded").html("<br>You made " + yourTotal + " exactly! <br> <br> You win the round!");
              $("#totalsAdded").css("font-size", "28px");
              
@@ -168,11 +163,9 @@ function gameInit() {
 
         };
 
-
         function reset() {
 
             yourTotal = 0;
-
 
             $("#totalHead").html("YOUR TOTAL:");
             $("#totalsAdded").html(yourTotal);
@@ -209,21 +202,9 @@ function gameInit() {
             yellow = Math.floor(Math.random() * 11 + 1);
             orange = Math.floor(Math.random() * 11 + 1);
 
-
         };
-
-
-
-
-
-
-
     };
 
+  };
 
-
-
-
-
-
-};
+});
