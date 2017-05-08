@@ -1,0 +1,133 @@
+@media screen and (max-width: 986px) {
+
+    #audio{
+
+        display:inline;
+        float:left;
+        
+    }
+
+    #totalsBox{
+
+        margin:0;
+        float:right;
+
+
+    }
+    #winBox{
+
+        margin:0;
+        float:right;
+
+
+    }
+
+
+    #texty{
+
+        font-size: 18px;
+        margin-top:-30px;
+
+    }
+}
+
+@media screen and (max-width: 760px) {
+
+    h1{
+
+        line-height: 38px;
+        float:right;
+    }
+
+    #texty{
+
+        clear:left;
+        margin-top: 340px;
+    }
+
+    #yellowCrystal{
+        height:110px;
+        width:70px;
+        float:right;   
+        margin:0;
+       
+
+    }
+
+    #blueCrystal{
+        
+        float:left;   
+        margin:0;
+         height:110px;
+        width:70px;
+
+    }
+
+
+    #magentaCrystal{
+        
+        float: left;
+        margin:0;
+         height:110px;
+        width:70px;
+
+    }
+
+
+    #orangeCrystal{
+        
+        float:right;  
+         height:110px;
+        width:70px;       
+    }
+   
+    .col-sm-1 {
+        
+        display: inline;
+       
+        margin:0;
+    }
+
+
+    #guessThis {
+   
+        position: relative;
+        font-size: 20px;
+        line-height: 160px;
+        color: black;
+        font-weight: bold;
+        padding: 90px;
+        margin-top: -700px;
+        margin-right: 40px;
+        margin-left: 50px;
+      
+    }
+
+    .clickCommand{
+
+        margin-left: 40px;
+    }
+
+    #totalsBox{
+
+        margin-top:80px;
+        float:left;
+    }
+
+    #winBox{
+
+        margin-top:-212px;
+        float:right;
+    }
+
+    #guessThis {
+        height: 40px;
+        float: right margin: 0;
+    }
+
+
+
+}
+
+
+

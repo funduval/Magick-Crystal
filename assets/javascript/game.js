@@ -58,7 +58,8 @@ function gameInit() {
         directions.addClass("toDo");
 
         $("#texty").html("Keep Clicking Crystals<br>To Add Up To: <br>" + mysteryNumber);
-        $("#texty").css("font-size", "38px", "color", "white", "bold");
+        $("#texty").css("font-size", "26px", "color", "white", "bold");
+        $("#texty").css("font-family", "Inknut Antiqua", "serif");
         $("#texty").css("text-align", "center");
 
     });
@@ -109,9 +110,10 @@ function gameInit() {
             $("#totalsAdded").html(yourTotal);
 
             reset();
-            /*setTimeout(function(){
+            setTimeout(function(){
        								 reset();
-      					}, 2300);==========the reset timeout kept stopping the audio=====*/
+      					}, 2300);
+            // ==========the reset timeout keeps stopping the audio=====
 
         };
 
@@ -122,11 +124,12 @@ function gameInit() {
             alert("Sorry, you went over " + mysteryNumber + "," + " so you lose!");
             $("#totalsAdded").html(yourTotal);
 
-            reset();
+           
 
-            /*setTimeout(function(){
+            setTimeout(function(){
        								 reset();
-      					}, 2300); ==========the reset timeout kept stopping the audio======*/
+      					}, 2300); 
+            // ==========the reset timeout keeps stopping the audio======
 
         };
 
@@ -136,10 +139,10 @@ function gameInit() {
             yourTotal = 0;
 
             $("#totalsAdded").html(yourTotal);
-            $(".clickCommand").html("Click the Crystal <br> for a New Number");
+            $(".clickCommand").html("Click the Magic <br> Crystal");
             $(".clickCommand").css("font-size", "30px");
             $(".clickCommand").css("color", "white");
-            $("#texty").html("Keep Clicking Crystals<br>To Add Up To <br> This New Number:");
+            $("#texty").html("Try to Add<br>Crystals Up To <br> This New Number:");
 
             mysteryNumber = Math.floor(Math.random() * ((120 - 19) + 1) + 19);
             magenta = Math.floor(Math.random() * 11 + 1);

@@ -9,16 +9,16 @@ body {
 
 .container {
     position: absolute;
-    left: 14px;
+    left: 4px;
     z-index: 1;
+
 }
 
 .col-sm-1 {
+   
     text-align: center;
-    margin: 14px;
-    padding: 0px;
     height: 200px;
-    text-align: center;
+    
     -webkit-transition-duration: 0.4s;
     /* Safari */
     transition-duration: 0.4s;
@@ -28,64 +28,23 @@ body {
     opacity: .30;
 }
 
-h3 {
-    text-align: center;
-    font-style: bold;
-    margin-top: 0;
-    margin-bottom: 0;
-}
 
-#totalsBox {
-    margin-top: 40px;
-    margin-left: 40px;
-    border-width: 4px;
-    border-style: solid;
-    border-color: white;
-    text-align: center;
-    color: black;
-}
-
-#guessThis {
-    position: relative;
-    font-size: 20px;
-    line-height: 160px;
-    color: black;
-    font-weight: bold;
-    padding: 0px;
-    margin-top: 0px;
-    margin-left: 40px;
-}
-
-#directions {
-    margin-left: 40px;
-}
-
-.toDo {
-    position: absolute;
-    z-index: 3;
-    bottom: 20px;
-    text-align: center;
-    box-sizing: border-box;
-    display: block;
-    height: 70px;
-    width: 70px;
-    font-size: 20px;
-    color: black;
-}
-
-#heading {
+.col-sm-2 {
+   
+    padding: 3px;
+    height: 230px;
     color: white;
+}
+.col-sm-3 {
+   
+    margin-left: 34px;
+    margin-right: 0;
+    padding: 3px;
     text-align: center;
-    margin-left: 26px;
-    padding: 8px;
+    height: 200px;
 }
-
-#texty {
-    padding-top: 40px;
-    padding-left: 80px;
-}
-
 .col-sm-4 {
+    
     margin: 0px;
     height: 230px;
     color: white;
@@ -96,93 +55,114 @@ h3 {
     padding-top: 0px;
 }
 
-.col-sm-3 {
-    margin-left: 34px;
-    margin-right: 0;
-    padding: 3px;
+
+h4 {
     text-align: center;
-    height: 200px;
+    font-style: bold;
+ 
+    margin-top: 6px;
+    margin-bottom: 3px;
+    padding:0;
+    font-family: 'Inknut Antiqua', serif;
 }
 
-#totalsAdded {
-    font-size: 30px;
+
+
+#totalsBox {
+    border-width: 4px;
+    border-style: solid;
+    border-color: white;
+    margin-left: 80px;
     text-align: center;
-    padding: 3px;
-    display: block;
-    height: 100px;
-    width: 180px;
-    color: black;
-    font-style: bold;
+    padding: 4px;
+    color:grey;
+    font-family: 'Inknut Antiqua', serif;
 }
+
+#guessThis {
+   
+    position: relative;
+    font-size: 20px;
+    line-height: 160px;
+    color: black;
+    font-weight: bold;
+    padding: 40px;
+    margin-top: 0px;
+    font-family: 'Inknut Antiqua', serif;
+  
+}
+
+#directions {
+    margin-left: 40px;
+}
+
+
+
+#heading {
+    color: white;
+    text-align: center;
+    padding: 8px;
+    font-family: 'Inknut Antiqua', serif;
+   
+}
+
+#texty {
+    
+	text-align: center;
+    font-size: 24px;
+    color: white;
+    font-style: bold;
+    margin-top: -110px;
+  
+}
+
 
 #winBox {
+    
     border-width: 4px;
     border-style: solid;
     border-color: white;
     text-align: center;
     padding-bottom: 4px;
+    color:grey;
+    margin-left: 52px;
+    font-family: 'Inknut Antiqua', serif;
+
+
+
 }
 
 #clickety {
     margin-bottom: 12px;
+    margin-left:82px;
+    font-family: 'Inknut Antiqua', serif;
 }
 
 .winLose {
+    
+    color: grey;
     text-align: center;
-    color: black;
-    text-align: center;
-    display: inline-block;
-    padding-top: 0px;
-    color: black;
-    font-size: 30px;
+    font-size: 28px;
     font-style: bold;
 }
+
+
 
 #totalsAdded {
-    font-size: 40px;
+    
+    font-size: 50px;
     text-align: center;
-    display: inline-block;
     padding-top: 0px;
-    color: black;
+    color: grey;
     font-style: bold;
+    font-family: 'Inknut Antiqua', serif;
+
 }
 
-#topRow .col-sm-2 {
-    padding: 3px;
-    height: 230px;
-    color: white;
-}
-
-#middleRow .col-sm-2 {
-    padding: 3px;
-    height: 230px;
-}
-
-#middleRow .col-sm-1 {
-    border-width: 4px;
-    border-style: solid;
-    border-color: white;
-    padding: 3px;
-    height: 230px;
-    border-width: 4px;
-    border-style: solid;
-    border-color: white;
-    margin-left: 4px;
-}
-
-#extraText {
-    margin-left: 62px;
-}
-
-#bottomRow .col-sm-2 {
-    margin: 14px;
-    padding: 3px;
-    height: 200px;
-}
 
 #cluster {
     position: relative;
-    margin-left: 60px;
+   
     display: inline-block;
     font-size: 26;
     font-size: bold;
@@ -227,28 +207,5 @@ h3 {
     }
 }
 
-@media screen and (max-width: 768px) {
-    #winBox {
-        clear: all;
-        display: inline;
-    }
-    #totalsBox {
-        clear: all;
-        display: inline;
-    }
-    .col-sm-1 {
-        height: 95px;
-    }
-    #texty {
-        clear: left;
-    }
-    .col-sm-4 {
-        clear: left;
-    }
-    .col-sm-5 {
-        clear: left;
-    }
-    .col-sm-3 {
-        clear: left;
-    }
-}
+
+
