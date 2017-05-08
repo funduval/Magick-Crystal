@@ -152,12 +152,20 @@ h4 {
 }
 
 
+ #wins.winLose {
+    margin-bottom: 0px;
+    line-height: 36px;
+}
+#losses.winLose {
+ margin-top: 0px;
+padding-bottom: 14px;
+}
 
 #totalsAdded {
     
     font-size: 50px;
     text-align: center;
-    padding-top: 0px;
+    padding: 4px;
     color: grey;
     font-style: bold;
     font-family: 'Inknut Antiqua', serif;
